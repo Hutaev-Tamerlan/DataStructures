@@ -6,17 +6,10 @@ namespace DataStructures
 {
     internal class MyList<T>
     {
-        private T[] _items;
-        private int _capacity = 4;
-        private int _count;
+        private T[] _items = new T[4];
+        private int _count = 0;
 
         public int Count { get { return _count; } }
-
-        public MyList()
-        {
-            _items = new T[_capacity];
-            _count = 0;
-        }
 
         public T this[int index]
         {
