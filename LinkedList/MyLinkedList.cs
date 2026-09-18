@@ -6,7 +6,10 @@ namespace LinkedList
 {
     internal class MyLinkedList<T>
     {
-        public Node<T> Head { get; private set; } = null;
+        private Node<T> Head { get; set; } = null;
+
+        private int _count = 0;
+        public int Count { get { return _count;  } }
 
         public void Print()
         {
@@ -24,6 +27,7 @@ namespace LinkedList
             Node<T> newNode = new Node<T>(data);
             newNode.Next = Head;
             Head = newNode;
+            _count++;
         }
 
         public void AddLast(T data)
@@ -33,6 +37,7 @@ namespace LinkedList
             if (Head == null)
             {
                 Head = newNode;
+                _count++;
                 return;
             }
 
@@ -44,14 +49,7 @@ namespace LinkedList
             }
 
             current.Next = newNode;
-        }
-
-        public void AddRangeLast(IEnumerable<T> items)
-        {
-            foreach (T item in items)
-            {
-                AddLast(item);
-            }
+            _count++;
         }
 
         public void AddRangeFirst(IEnumerable<T> items)
@@ -59,6 +57,14 @@ namespace LinkedList
             foreach (T item in items.Reverse())
             {
                 AddFirst(item);
+            }
+        }
+
+        public void AddRangeLast(IEnumerable<T> items)
+        {
+            foreach (T item in items)
+            {
+                AddLast(item);
             }
         }
 
@@ -72,6 +78,7 @@ namespace LinkedList
             if (Head.Data.Equals(data))
             {
                 Head = Head.Next;
+                _count--;
                 return;
             }
 
@@ -82,11 +89,23 @@ namespace LinkedList
                 if (current.Next.Data.Equals(data))
                 {
                     current.Next = current.Next.Next;
+                    _count--;
                     return;
                 }
 
                 current = current.Next;
             }
+        }
+
+        public void RemoveFirst()
+        {
+            if (Head == null)
+            {
+                return;
+            }
+
+            Head = Head.Next;
+            _count--;
         }
 
         public void RemoveLast()
@@ -99,6 +118,7 @@ namespace LinkedList
             if (Head.Next == null)
             {
                 Head = null;
+                _count--;
                 return;
             }
 
@@ -107,24 +127,16 @@ namespace LinkedList
             while (current.Next.Next != null)
             {
                 current = current.Next;
+                _count--;
             }
 
             current.Next = null;
         }
 
-        public void RemoveFirst()
-        {
-            if (Head == null)
-            {
-                return;
-            }
-
-            Head = Head.Next;
-        }
-
         public void Clear()
         {
             Head = null;
+            _count = 0;
         }
     }
 }

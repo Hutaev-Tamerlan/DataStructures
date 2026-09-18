@@ -19,6 +19,7 @@
             list.RemoveFirst();
 
             list.Print();
+            Console.WriteLine(list.Count());
         }
     }
 }
