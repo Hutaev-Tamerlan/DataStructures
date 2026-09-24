@@ -127,10 +127,10 @@ namespace LinkedList
             while (current.Next.Next != null)
             {
                 current = current.Next;
-                _count--;
             }
 
             current.Next = null;
+            _count--;
         }
 
         public void Clear()
