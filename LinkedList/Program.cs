@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            MyLinkedList<int> list = new MyLinkedList<int>();
+            CircularDoublyLinkedList<int> list = new CircularDoublyLinkedList<int>();
 
             list.AddLast(10);
             list.AddLast(20);
@@ -19,6 +19,7 @@
             list.RemoveFirst();
 
             list.Print();
+            list.PrintReverse();
             Console.WriteLine(list.Count);
         }
     }

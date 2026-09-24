@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LinkedList
 {
-    internal class MyLinkedList<T>
+    internal class SinglyLinkedList<T>
     {
         private Node<T> Head { get; set; } = null;
 
@@ -20,6 +20,8 @@ namespace LinkedList
                 Console.Write(current.Data + " ");
                 current = current.Next;
             }
+
+            Console.WriteLine();
         }
 
         public void AddFirst(T data)
