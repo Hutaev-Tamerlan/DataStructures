@@ -13,42 +13,46 @@ namespace LinkedList
 
         public int Count { get { return _count; } }
 
-        public void Print()
+        public string Print()
         {
+            string result = "";
+
             if (Head == null)
             {
-                return;
+                return result;
             }
 
             Node<T> current = Head;
 
             do
             {
-                Console.Write(current.Data + " ");
+                result += current.Data + " ";
                 current = current.Next;
             }
             while(current != Head);
 
-            Console.WriteLine();
+            return result;
         }
 
-        public void PrintReverse()
+        public string PrintReverse()
         {
+            string result = "";
+
             if (Head == null)
             {
-                return;
+                return result;
             }
 
             Node<T> current = Head.Previous;
 
             do
             {
-                Console.Write(current.Data + " ");
+                result += current.Data + " ";
                 current = current.Previous;
             }
             while (current != Head.Previous);
 
-            Console.WriteLine();
+            return result;
         }
 
         public void AddFirst(T data)

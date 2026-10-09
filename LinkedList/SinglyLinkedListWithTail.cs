@@ -12,17 +12,19 @@ namespace LinkedList
         private int _count = 0;
         public int Count { get { return _count; } }
 
-        public void Print()
+        public string Print()
         {
             Node<T> current = Head;
 
+            string result = "";
+
             while (current != null)
             {
-                Console.Write(current.Data + " ");
+                result += current.Data + " ";
                 current = current.Next;
             }
 
-            Console.WriteLine();
+            return result;
         }
 
         public void AddFirst(T data)

@@ -18,8 +18,8 @@
             list.RemoveLast();
             list.RemoveFirst();
 
-            list.Print();
-            list.PrintReverse();
+            Console.WriteLine(list.Print());
+            Console.WriteLine(list.PrintReverse());
             Console.WriteLine(list.Count);
         }
     }
