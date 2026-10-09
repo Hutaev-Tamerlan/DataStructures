@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="DataStructures/DynamicArray.csproj" />
   <Project Path="LinkedList/LinkedList.csproj" Id="35e3d856-7c4c-463f-9039-41e72b503f4d" />
+  <Project Path="TestProject/TestProject.csproj" Id="e6280fe2-e135-41c9-a38e-c57011add84e" />
 </Solution>
